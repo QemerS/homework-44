@@ -88,7 +88,10 @@ let dropElementOS = (e) => {
             let img = document.createElement("img");
             img.src = reader.result;
             img.classList.add("dragElement");
-            img.id = "dragElement";
+            // img.id = "dragElement";
+            // THE PROBLEM was ID. Let's create an id and asssign in to the img
+            let imgId = Math.floor(Math.random() * 10000);
+            img.id = `id${imgId}`;
             img.setAttribute("draggable", "true");
             img.setAttribute("ondragstart", "dragElement(event)");
             document.querySelector(".dropElementContainerOS").append(img);
